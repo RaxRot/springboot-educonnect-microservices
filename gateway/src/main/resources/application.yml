@@ -1,34 +1,6 @@
-server:
-  port: 8222
 
 spring:
   application:
     name: gateway
   config:
     import: optional:configserver:http://localhost:8888
-
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-
-      routes:
-        - id: teacher
-          uri: lb://teacher
-          predicates:
-            - Path=/api/teachers/**
-        - id: course
-          uri: lb://course
-          predicates:
-            - Path=/api/courses/**
-        - id: student
-          uri: lb://student
-          predicates:
-            - Path=/api/students/**
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/

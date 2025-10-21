@@ -3,25 +3,3 @@ spring:
     name: student
   config:
     import: optional:configserver:http://localhost:8888
-
-  datasource:
-    url: jdbc:mysql://localhost:3306/student_vlad_micro?useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: 19649072Sever
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQLDialect
-
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-server:
-  port: 8083
-
